@@ -1,0 +1,19 @@
+{
+	"url" : "http://www.duorou.com/duorouzhiwu-%%-b0-duorouzhiwu.html",
+	"type" : "text",
+	"from" : "1",
+	"to" : "1",
+	"charset" : "utf8",
+	"saveDir" : "../downloads:/duorou_com",
+	"selector" : [{
+			"$" : "$(\"div #pager\").find(\"a\")",
+			"attr" : "href"
+		}, {
+			"$" : "$(\"div .portfolio-title\")"
+		}
+	],
+	"notNeedHostPrefix":false,
+	"isPagination" : 1,
+	"contentModel":"json",
+	"mode" : "console"
+}
