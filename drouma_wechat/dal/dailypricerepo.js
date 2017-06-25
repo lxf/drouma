@@ -56,7 +56,8 @@ exports.insertPost = function (data, callback) {
 
 //获取今天的报价信息
 exports.getTodayAllPrice = function (data, callback) {
-    var sql = "select dr_name,dr_price,dr_updatetime from dr_dailyprice where dr_isenable=1 and dr_updatetime=CURDATE()";
+    //and dr_updatetime=CURDATE()
+    var sql = "select dr_name,dr_price,dr_updatetime from dr_dailyprice where dr_isenable=1";
 
     for (var key in data) {
         sql += " and " + key + " like '%" + data[key] + "%' ";
