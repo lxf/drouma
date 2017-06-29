@@ -45,10 +45,11 @@ router.use('/', wechat(config, function (req, res, next) {
                             message.push("前20个品种报价信息:\n");
                         }
                         result.forEach(function (element) {
-                            message.push("品种:" + element.dr_name + ",价格:" + element.dr_price + " 元" + ",报价日期:" + moment(element.dr_updatetime).format("YYYY-MM-DD") + "\n");
+                            message.push("品种:" + element.dr_name + ",价格:" + element.dr_price + " 元,规格:" + element.dr_size + ",报价日期:" + moment(element.dr_updatetime).format("YYYY-MM-DD") + "\n");
                         }, this);
 
-                        message.push("\n以上查询结果仅提供参考,并且规格均为5cm左右小苗");
+                        message.push("\n以上查询结果仅提供参考");
+                        message.push("\n了解多肉知识戳->http://www.drouma.com");
                     }
 
                     res.reply(message.join("\n"));

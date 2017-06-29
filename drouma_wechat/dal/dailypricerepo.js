@@ -57,13 +57,13 @@ exports.insertPost = function (data, callback) {
 //获取今天的报价信息
 exports.getTodayAllPrice = function (data, callback) {
     //and dr_updatetime=CURDATE()
-    var sql = "select dr_name,dr_price,dr_updatetime from dr_dailyprice where dr_isenable=1";
+    var sql = "select dr_name,dr_price,dr_size,dr_updatetime from dr_dailyprice where dr_isenable=1";
 
     for (var key in data) {
         sql += " and " + key + " like '%" + data[key] + "%' ";
     }
 
-    sql += " limit 0,20";
+    sql += " order by dr_updatetime desc limit 0,20";
 
     //链接数据库的操作
 
